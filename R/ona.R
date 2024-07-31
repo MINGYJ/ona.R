@@ -172,7 +172,7 @@ onaDownload = function(website,formName, account, uname, pass=NA, ...) {
   }
   dataUrl = fUrl(formName, account)
   formUrl = fUrl(formName, account, form=T)
-  
+  print(formUrl)
   #TODO -- pre-flight check? below doesn't work; expects 200+ status
   #if(!url.exists(datUrl)) { stop("could not find ", dataUrl)}
   #if(!url.exists(formUrl)) { stop("could not find ", formUrl)}
