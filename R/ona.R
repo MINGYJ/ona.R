@@ -170,8 +170,8 @@ onaDownload = function(website,formName, account, uname, pass=NA, ...) {
     str_c(website, account, '/forms/', formName,
           ifelse(form,'/form.json', '/data.csv'))
   }
-  dataUrl = fUrl(formName, account)
-  formUrl = fUrl(formName, account, form=T)
+  dataUrl = fUrl(website,formName, account)
+  formUrl = fUrl(website,formName, account, form=T)
   print(formUrl)
   #TODO -- pre-flight check? below doesn't work; expects 200+ status
   #if(!url.exists(datUrl)) { stop("could not find ", dataUrl)}
