@@ -152,6 +152,7 @@ replaceAllNamesWithLabels <- function(onaDataObj, language=NULL) {
 #' This function downloads a dataset for the given form and username, and produces a 
 #' onaData Object.
 #'
+#' @param website website to decide where to download from.
 #' @param formName formname on ona.io for which we download the data
 #' @param account ona.io account/username/org_username that owns the form
 #' @param uname ona.io username
@@ -164,9 +165,9 @@ replaceAllNamesWithLabels <- function(onaDataObj, language=NULL) {
 #' good_eats # is a data frame of all the data
 #' good_eats@form # is the form for that data, encoded as a dataframe
 #' privateData <- onaDownload("Private_Data_For_Testing", "ona_r", uname="ona_r", pass="ona_r")
-onaDownload = function(formName, account, uname, pass=NA, ...) {
-  fUrl <- function(formName, uname, form=F) {
-    str_c('https://api.ona.io/', account, '/forms/', formName,
+onaDownload = function(website,formName, account, uname, pass=NA, ...) {
+  fUrl <- function(website,formName, uname, form=F) {
+    str_c(website, account, '/forms/', formName,
           ifelse(form,'/form.json', '/data.csv'))
   }
   dataUrl = fUrl(formName, account)
