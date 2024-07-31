@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/onaio/ona.R.svg?branch=master)](https://travis-ci.org/onaio/ona.R)
 
-ona.R
+ona.R but for other website
 =====
 
 ona.R is a library for making reading data form [ona.io](https://ona.io) into R easier.
